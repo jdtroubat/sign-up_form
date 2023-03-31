@@ -1,10 +1,11 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 @font-face {
-    font-family: "NorseBold";
+    font-family: "Norse-Bold";
     src: url("fonts/Norse-Bold.otf") format("opentype");
   }
 
@@ -47,24 +48,133 @@ img[src="images/logo.png"] {
     font-size: 8rem;
     padding-right: 15%;
     color: rgba(255, 255, 255, 0.8);
-    font-family: NorseBold;
+    font-family: Norse-Bold;
     
 }
  
 #container-bcd{
     height: 100vh;
     width: 67vw;
+   
 }
-#container-b,
-#container-c,
-#container-d {
-    height: 33.33vh;
+h2.b1{
+    padding-left: 4%;
+    padding-top: 10%;
 }
+h2.b2{
+    padding-left: 4%;
+    padding-top: 2%;
+}
+h2.c{
+    padding-left: 4%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+
+}
+.c-main{
+    display: flex;
+    justify-content: flex-start;
+}
+form.c-main{
+    padding-left: 4%;
+    width: 100%;
+}
+.c-left{
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.c-right{
+    display: flex;
+    flex-direction: column;
+    margin-left: 17%;
+
+}
+
 #container-b{
-    background-color: rgba(0, 0, 0, 0.01);
+    background-color: rgba(0, 0, 0, 0.02);
+    height: 35%;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
+#container-c{
+    height: 30%;
+}
+
+.c-left label[for="first-name"],
+.c-left label[for="email"],
+.c-left label[for="password"]{
+    width: 100%;
+    margin-bottom: 3%;
+    color: #4f5848;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+.c-right label[for="last-name"],
+.c-right label[for="phone-number"],
+.c-right label[for="confirm-password"]{
+    width: 100%;
+    margin-bottom: 3%;
+    color: #4f5848;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+
+.c-left #first-name,
+.c-left #email,
+.c-left #password{
+    margin-bottom: 4%;
+    height: 1.5rem;
+    width: 150%;
+}
+.c-right #last-name,
+.c-right #tel,
+.c-right #confirm-password{
+    margin-bottom: 4%;
+    height: 1.5rem;
+    width: 150%;
+}
+.error {
+    border: 1px solid #ff4d4d;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #2a81f2;
+    box-shadow: 0 0 5px rgba(76, 154, 255, 0.5);
+}
+
+
+
 #container-d{
-    background-color: rgba(0, 0, 0, 0.01);
+    background-color: rgba(0, 0, 0, 0.02);
+    height: 35%;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+button.create-account{
+    margin-left: 4%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #596D48;
+    font-size: medium;
+}
+
+h4.d{
+    padding-left: 4%;
+}
+a.d{
+    color: #596D48;
 }
 @media screen and (max-width: 768px) {
     #container-a {
