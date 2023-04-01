@@ -31,11 +31,12 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 35%;
+    top: 21.5%;
     width: 100%;
     height: 8rem;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
 img[src="images/logo.png"] {
     height: 10rem;
     width: auto;
@@ -52,24 +53,31 @@ img[src="images/logo.png"] {
  
 #container-bcd{
     height: 100vh;
-    width: 67vw;
-   
+    width: 67vw;   
 }
+
 h2.b1{
     padding-left: 4%;
-    padding-top: 10%;
+    padding-top: 12.5%;
+    font-family: sans-serif;
+    font-size: 1.4rem;
 }
 
 h2.b2{
     padding-left: 4%;
-    padding-top: 2%;
+    padding-top: 3%;
+    font-family: sans-serif;
+    font-size: 1.4rem;
 }
 
 h2.c{
     padding-left: 4%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-family: sans-serif;
+    font-size: 1.4rem;
 }
+
 .c-main{
     display: flex;
     justify-content: flex-start;
@@ -84,6 +92,7 @@ form.c-main{
     display: flex;
     flex-direction: column;   
 }
+
 .c-right{
     display: flex;
     flex-direction: column;
@@ -110,7 +119,8 @@ form.c-main{
     margin-bottom: 2%;
     color: #4f5848;
     font-family: sans-serif;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.75rem;
 }
 
 .c-left #first-name,
@@ -119,17 +129,20 @@ form.c-main{
 .c-right #last-name,
 .c-right #tel,
 .c-right #confirm-password{
-    margin-bottom: 3%;
+    margin-bottom: 7%;
     height: 1.5rem;
     width: 100%;
 }
 
 .error {
-    border: 1px solid #ff4d4d;
+    border: 1px solid;
 }
 
 .error-message {
-    color: #ff4d4d;
+    color: #cf2424;
+    font-family: sans-serif;
+    font-size: 0.75rem;
+    margin-top: -0.5rem;
 }
 
 
@@ -139,8 +152,6 @@ input:focus {
     box-shadow: 0 0 5px rgba(76, 154, 255, 0.5);
 }
 
-
-
 #container-d{
     background-color: rgba(0, 0, 0, 0.02);
     height: 35%;
@@ -149,23 +160,28 @@ input:focus {
 
 button.create-account{
     margin-left: 4%;
-    margin-top: 2%;
+    margin-top: 4%;
     margin-bottom: 3%;
-    padding-left: 4%;
-    padding-right: 4%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
     color: white;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     background-color: #596D48;
+    font-family: sans-serif;
     font-size: medium;
+    font-weight: 600;
 }
 
 h4.d{
     padding-left: 4%;
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: #2c2c2c;
 }
 
 a.d{

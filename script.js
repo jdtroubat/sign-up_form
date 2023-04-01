@@ -2,48 +2,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('confirm-password');
     const createAccountBtn = document.querySelector('.create-account');
+    const errorElement = document.createElement('div');
 
-    const createErrorElement = () => {
-        const errorElement = document.createElement('div');
-        errorElement.classList.add('error-message');
-        errorElement.textContent = "Passwords do not match";
-        return errorElement;
-    };
+    errorElement.classList.add('error-message');
+    errorElement.textContent = "*Passwords do not match";
 
-    const validatePasswords = () => {
-        const passwordErrorElement = passwordInput.nextElementSibling;
-        const confirmPasswordErrorElement = confirmPasswordInput.nextElementSibling;
-
-        if (passwordInput.value !== confirmPasswordInput.value) {
+    const toggleError = (showError) => {
+        if (showError) {
             passwordInput.classList.add('error');
             confirmPasswordInput.classList.add('error');
 
-            if (!passwordErrorElement || !passwordErrorElement.classList.contains('error-message')) {
-                passwordInput.insertAdjacentElement('afterend', createErrorElement());
+            if (!passwordInput.nextElementSibling || !passwordInput.nextElementSibling.classList.contains('error-message')) {
+                passwordInput.insertAdjacentElement('afterend', errorElement.cloneNode(true));
             }
 
-            if (!confirmPasswordErrorElement || !confirmPasswordErrorElement.classList.contains('error-message')) {
-                confirmPasswordInput.insertAdjacentElement('afterend', createErrorElement());
+            if (!confirmPasswordInput.nextElementSibling || !confirmPasswordInput.nextElementSibling.classList.contains('error-message')) {
+                confirmPasswordInput.insertAdjacentElement('afterend', errorElement.cloneNode(true));
             }
         } else {
             passwordInput.classList.remove('error');
             confirmPasswordInput.classList.remove('error');
 
-            if (passwordErrorElement && passwordErrorElement.classList.contains('error-message')) {
-                passwordErrorElement.remove();
+            if (passwordInput.nextElementSibling && passwordInput.nextElementSibling.classList.contains('error-message')) {
+                passwordInput.nextElementSibling.remove();
             }
 
-            if (confirmPasswordErrorElement && confirmPasswordErrorElement.classList.contains('error-message')) {
-                confirmPasswordErrorElement.remove();
+            if (confirmPasswordInput.nextElementSibling && confirmPasswordInput.nextElementSibling.classList.contains('error-message')) {
+                confirmPasswordInput.nextElementSibling.remove();
             }
         }
     };
 
     createAccountBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        validatePasswords();
+        toggleError(passwordInput.value !== confirmPasswordInput.value);
     });
 
-    passwordInput.addEventListener('input', validatePasswords);
-    confirmPasswordInput.addEventListener('input', validatePasswords);
+    passwordInput.addEventListener('input', () => toggleError(passwordInput.value !== confirmPasswordInput.value));
+    confirmPasswordInput.addEventListener('input', () => toggleError(passwordInput.value !== confirmPasswordInput.value));
 });
